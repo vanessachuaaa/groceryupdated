@@ -14,17 +14,7 @@ export default {
          counter:0
         }
   },
-  //Lifecycle hooks
   
-  beforeUpdate: function() {
-    console.log("beforeUpdate()")
-  },
-  updated: function() {
-    console.log("updated()")
-  },
-  beforeDestroy: function() {
-    console.log("beforeDestroy()")
-  },
   methods:{
       decrement(){
           if(this.counter>0)

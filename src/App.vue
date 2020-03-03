@@ -1,10 +1,9 @@
 <template>
   <div id="app">    
-    <app-header></app-header>
-    <PageContent v-bind:itemsList="itemsListInput"></PageContent>
-     <PageContent v-bind:itemsList="itemsListSecond"></PageContent>
+    <app-header v-bind:title="msg"></app-header>
+    <router-view></router-view>
+    <!--<PageContent v-bind:itemsList="itemsListInput"></PageContent>-->
     <app-footer></app-footer>
-    
   </div>
 </template>
 
@@ -12,7 +11,7 @@
 //Registering components Locally
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import PageContent from './components/PageContent.vue'
+//import PageContent from './components/PageContent.vue'
 export default {
   name: 'App',
   data(){
@@ -27,7 +26,8 @@ export default {
       itemsListSecond: [{name:'Oranges',image:'./assets/orange.jpg',show:false},
                     {name:'Peanut Butter',image:'/assets/peanutbutter.jpeg',show:false},
                     {name:'Strawberries',image:'/assets/strawberries.jpg',show:false}
-                    ]
+                    ],
+      msg:"Grocery"
           }
   },
   components: {
@@ -35,7 +35,7 @@ export default {
     'app-header':Header,
     'app-footer':Footer,
     //Registering without a name
-    PageContent
+    //PageContent
   }
 }
 </script>

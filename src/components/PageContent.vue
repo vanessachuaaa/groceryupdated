@@ -2,9 +2,13 @@
   <div>
     <ul>
         <li v-for="item in itemsList" v-bind:key="item.name" >
+          <!-- Add props here -->
             <h2 v-on:click="item.show = !item.show">{{item.name}}</h2>
             <img v-bind:src="item.image" v-show="item.show"/>
             <buttonComponent></buttonComponent>
+                
+                
+            
         </li>
     </ul>
   </div>
@@ -14,17 +18,24 @@
 <script>
 import ButtonComponent from './ButtonComponent.vue'
 export default {
-  /*props:[
-    'itemsList'
-  ],*/
-  props:{
+  /*props: {
     itemsList:{
-      type:Array
+      type: Array
     }
   },
+  data() {
+    return{
+
+    }
+  },*/
   data(){
     return{
-        
+        itemsList: [{name:'Eggs',image:'./assets/eggs.jpg',show:false},
+                    {name:'Bread',image:'/assets/bread.jfif',show:false},
+                    {name:'Jam',image:'/assets/jam.jfif',show:false},
+                    {name:'CornFlakes',image:'/assets/cornflakes.jfif',show:false},
+                    {name:'Milk',image:'/assets/milk.jfif',show:false},
+                    {name:'Juice',image:'/assets/juice.jfif',show:false}]
         }
   },
   components:{
